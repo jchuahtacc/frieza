@@ -12,14 +12,16 @@ Anyways, reading from files in that folder allows you to see power information o
 
 P-states are processor operation states. Roughly, the processor can control core voltage and frequency independently. The higher the frequency, the higher the performance (for compute tasks). The higher the voltage, the lower the efficiency. Both contribute to increased power dissipation. Some high-power states may not be sustainable, especially when other cores begin working.
 
-For maximum performance in practice, the processor is allowed to do its own thing, freely adjusting the P-state of cores to give maximum performance when needed (not sure how processes are balanced, OS?) then slowing or stopping (C-state) cores down if idle.
+For maximum performance in practice, the processor is allowed to do its own thing, freely adjusting the P-state of cores to give maximum performance when needed (not sure how processes are balanced, OS?) then slowing (P-states other than P0) or stopping (C-states other than C0) cores down if idle.
 
-Because the states are at the whim of the processor and might be influenced by temperature sensors (analog, slightly random), performance between two identical runs of a program might vary. Disabling Turbo Boost can eliminate this source of variation.
+Because the states are at the whim of the processor and might be influenced by temperature sensors (analog, slightly random), performance between two identical runs of a program might vary. Disabling Turbo Boost can eliminate this source of variation by reducing performance to the lowest "guaranteed" performance level.
 
 Refs:
-* https://www.kernel.org/doc/Documentation/cpu-freq/intel-pstate.txt
-* https://plus.google.com/+ArjanvandeVen/posts/dLn9T4ehywL
-* https://software.intel.com/en-us/blogs/2008/05/29/what-exactly-is-a-p-state-pt-1
+* [Linux Intel P-state Driver](https://www.kernel.org/doc/Documentation/cpu-freq/intel-pstate.txt)
+* [Some basics on CPU P states on Intel processors - Arjan van de Ven](https://plus.google.com/+ArjanvandeVen/posts/dLn9T4ehywL)
+* [Balancing Power and Performance
+in the Linux Kernel - Kristen Accardi](https://software.intel.com/en-us/blogs/2008/05/29/what-exactly-is-a-p-state-pt-1)
+* [Power Management States: P-States, C-States, and Package C-States - Taylor Kidd](https://software.intel.com/en-us/articles/power-management-states-p-states-c-states-and-package-c-states)
 
 ## Monitoring Tools
 
@@ -35,8 +37,8 @@ Provides `etrace2`, a utility written in C that can kick out power information. 
 
 > Intel® Power Gadget is a software utility and library, which allows developers to monitor power at very fine time granularities (few tens of milliseconds).  To do this, the tool uses an architected capability in Intel® processors which is called RAPL (Runtime Average Power Limiting). RAPL is available on Intel® codename Sandy Bridge and later processors.
 
-[Official](https://software.intel.com/en-us/articles/intel-power-gadget-20)
-[GitHub (posted by 3rd party)](https://github.com/edlf/powergadgetlinux)
+* [Official](https://software.intel.com/en-us/articles/intel-power-gadget-20)
+* [GitHub (posted by 3rd party)](https://github.com/edlf/powergadgetlinux)
 
 ## Management Tools
 
