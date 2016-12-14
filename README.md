@@ -8,6 +8,16 @@ It's also accessible via software *without root* using Linux kernel 3.13+, or in
 
 Anyways, reading from files in that folder allows you to see power information on the sockets and DRAM banks. It does not provide per-core information.
 
+### API?
+
+Trying to find some reference as to what files mean what....
+
+* https://www.kernel.org/doc/Documentation/power/powercap/powercap.txt
+* http://lxr.free-electrons.com/source/drivers/powercap/intel_rapl.c
+* http://web.eece.maine.edu/~vweaver/projects/rapl/
+* http://icl.cs.utk.edu/projects/papi/wiki/PAPITopics:RAPL_Access
+* https://www-ssl.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.pdf
+
 ## P-states
 
 P-states are processor operation states. Roughly, the processor can control core voltage and frequency independently. The higher the frequency, the higher the performance (for compute tasks). The higher the voltage, the lower the efficiency. Both contribute to increased power dissipation. Some high-power states may not be sustainable, especially when other cores begin working.
