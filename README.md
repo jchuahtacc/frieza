@@ -18,6 +18,10 @@ Trying to find some reference as to what files mean what....
 * http://icl.cs.utk.edu/projects/papi/wiki/PAPITopics:RAPL_Access
 * https://www-ssl.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-3b-part-2-manual.pdf
 
+### Research with RAPL
+
+* Hahnel, et al. validating measurements and ["Measuring Energy Consumption for Short Code Paths Using RAPL"](https://os.inf.tu-dresden.de/papers_ps/greenmetrics2012-rapl.pdf) (2012)
+
 ## P-states
 
 P-states are processor operation states. Roughly, the processor can control core voltage and frequency independently. The higher the frequency, the higher the performance (for compute tasks). The higher the voltage, the lower the efficiency. Both contribute to increased power dissipation. Some high-power states may not be sustainable, especially when other cores begin working.
